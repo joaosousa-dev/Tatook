@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34616.47
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tatook.Domain", "Tatook.Domain\Tatook.Domain.csproj", "{DB156C03-7A83-4BBB-9DD5-F1DF9B172640}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tatook.Infrastructure", "Tatook.Infrastructure\Tatook.Infrastructure.csproj", "{C7BE7986-2914-416D-BBD5-FC1734F3CC0A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DB156C03-7A83-4BBB-9DD5-F1DF9B172640} = {DB156C03-7A83-4BBB-9DD5-F1DF9B172640}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tatook.API", "Tatook.API\Tatook.API.csproj", "{5C21B68D-9897-466F-AF71-DC1B9CD9F3A7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tatook.Application", "Tatook.Application\Tatook.Application.csproj", "{BAAC43FD-93E3-4CE7-9FE7-913E20B1DE4F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tatook.Tests", "Tatook.Tests\Tatook.Tests.csproj", "{CEE97371-F2F2-423E-98A1-9E6F6ECF2A14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tatook.Shared", "Tatook.Shared\Tatook.Shared.csproj", "{3F0BECFF-3982-4DFA-B1B6-53DC765F15BF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB156C03-7A83-4BBB-9DD5-F1DF9B172640}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB156C03-7A83-4BBB-9DD5-F1DF9B172640}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB156C03-7A83-4BBB-9DD5-F1DF9B172640}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB156C03-7A83-4BBB-9DD5-F1DF9B172640}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7BE7986-2914-416D-BBD5-FC1734F3CC0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7BE7986-2914-416D-BBD5-FC1734F3CC0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7BE7986-2914-416D-BBD5-FC1734F3CC0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7BE7986-2914-416D-BBD5-FC1734F3CC0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C21B68D-9897-466F-AF71-DC1B9CD9F3A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C21B68D-9897-466F-AF71-DC1B9CD9F3A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C21B68D-9897-466F-AF71-DC1B9CD9F3A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C21B68D-9897-466F-AF71-DC1B9CD9F3A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAAC43FD-93E3-4CE7-9FE7-913E20B1DE4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAAC43FD-93E3-4CE7-9FE7-913E20B1DE4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAAC43FD-93E3-4CE7-9FE7-913E20B1DE4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAAC43FD-93E3-4CE7-9FE7-913E20B1DE4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEE97371-F2F2-423E-98A1-9E6F6ECF2A14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEE97371-F2F2-423E-98A1-9E6F6ECF2A14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEE97371-F2F2-423E-98A1-9E6F6ECF2A14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEE97371-F2F2-423E-98A1-9E6F6ECF2A14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F0BECFF-3982-4DFA-B1B6-53DC765F15BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F0BECFF-3982-4DFA-B1B6-53DC765F15BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F0BECFF-3982-4DFA-B1B6-53DC765F15BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F0BECFF-3982-4DFA-B1B6-53DC765F15BF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {14AACBBC-D4A4-43E4-80D4-016341323E06}
+	EndGlobalSection
+EndGlobal
