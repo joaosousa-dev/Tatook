@@ -1,21 +1,23 @@
-﻿using System.Text.RegularExpressions;
+﻿using Flunt.Validations;
+using System.Text.RegularExpressions;
 using Tatook.Shared.ValueObjects;
 
 namespace Tatook.Domain.ValueObjects
 {
     public class Email : ValueObject
     {
-        public string Adreess { get; private set; }
+        public string Address { get; private set; }
         public Email(string adreess)
         {
-            Adreess = adreess;
+            Address = adreess;
             Validate();
         }
         private void Validate()
         {
-            bool isValid = Regex.IsMatch(Adreess, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase);
-            if (!isValid)
-                AddNotification("Email adreess", "Email Adreess is invalid");
+            AddNotifications(new Contract<Email>()
+                .Requires()
+                .IsEmail(Address, "Email")
+                );
         }
     }
 }

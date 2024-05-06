@@ -1,4 +1,5 @@
-﻿using Tatook.Shared.ValueObjects;
+﻿using Flunt.Validations;
+using Tatook.Shared.ValueObjects;
 
 namespace Tatook.Domain.ValueObjects
 {
@@ -14,13 +15,16 @@ namespace Tatook.Domain.ValueObjects
             LastName = lastName;
             Validate();
         }
-        
+
         public void Validate()
         {
-            if (string.IsNullOrWhiteSpace(FirstName))
-                AddNotification("FirstName", "Name is required");
-            if (string.IsNullOrWhiteSpace(LastName))
-                AddNotification("LastName", "Name is required");
+            AddNotifications(new Contract<Name>()
+                .Requires()
+                .IsNotNullOrWhiteSpace(FirstName, "FirstName", "FirstName is required")
+                .IsNotNullOrWhiteSpace(LastName, "LastName", "LastName is required")
+                .IsLowerThan(FirstName,20, "FirstName", "FirstName shold be lower than 20 characters")
+                .IsLowerThan(LastName, 20, "LastName", "LastName shold be lower than 20 characters")
+            );
         }
 
         public override string ToString()
