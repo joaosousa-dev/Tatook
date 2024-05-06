@@ -8,11 +8,21 @@ namespace Tatook.Domain.Entities.Quotes.Schedules
 {
     public class Schedule : BaseEntity
     {
+        public Schedule(User tattoist, DateTime createDate, IList<Session> sessions, Customer customer, Quote quote, EScheduleStatus status)
+        {
+            Tattoist = tattoist;
+            CreateDate = createDate;
+            Sessions = sessions;
+            Customer = customer;
+            Quote = quote;
+            Status = status;
+        }
+
         public User Tattoist { get; private set; }
         public DateTime CreateDate { get; private set; }
         public IList<Session> Sessions { get; private set; }
-        public string ScheduleLink { get; set; }
         public Customer Customer { get; private set; }
+        public Quote Quote { get; private set; }
         public EScheduleStatus Status { get; private set; }
 
     }
