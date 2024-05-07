@@ -10,6 +10,9 @@ namespace Tatook.Domain.Entities.Users
 {
     public class User : BaseEntity
     {
+        protected User()
+        {
+        }
         public User(Name name, Email email, Company? company, IList<Quote>? quotes = null, string? photoUrl = null, Subscription? subscription = null)
         {
             PasswordHash = PasswordHasher.Hash(PasswordGenerator.Generate(25));
@@ -26,7 +29,7 @@ namespace Tatook.Domain.Entities.Users
         public string PasswordHash { get; private set; }
         public IList<Quote>? Quotes { get; private set; }
         public Company? Company { get; private set; }
-        public string? PhotoUrl { get; set; }
+        public string? PhotoUrl { get; private set; }
         public Subscription? Subscription { get; private set; }
 
         public void UpdateEmail(Email email)

@@ -5,7 +5,8 @@ namespace Tatook.Domain.Entities.Subscriptions
 {
     public class Subscription : BaseEntity
     {
-        public Subscription(DateTime startDate, DateTime expireDate, Plan plan, bool active)
+        protected Subscription() { }
+        public Subscription(DateTime startDate, DateTime expireDate, Plan plan)
         {
             StartDate = startDate;
             ExpireDate = expireDate;

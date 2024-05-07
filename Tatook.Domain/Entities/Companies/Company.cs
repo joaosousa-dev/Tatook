@@ -5,6 +5,10 @@ namespace Tatook.Domain.Entities.Companies
 {
     public class Company : BaseEntity
     {
+        protected Company()
+        {
+            //EF CORE
+        }
         public Company(string name, string? logoLink, User? owner = null)
         {
             Name = name;

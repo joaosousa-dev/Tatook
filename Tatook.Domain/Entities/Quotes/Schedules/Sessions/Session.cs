@@ -5,6 +5,7 @@ namespace Tatook.Domain.Entities.Quotes.Schedules.Sessions
 {
     public class Session : BaseEntity
     {
+        protected Session() { }
         public Session(DateTime startDateTime, DateTime endDateTime, Schedule schedule, string scheduleLink, ESessionStatus status)
         {
             StartDateTime = startDateTime;

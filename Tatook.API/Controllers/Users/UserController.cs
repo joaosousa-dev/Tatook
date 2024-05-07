@@ -1,5 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Reflection.Metadata;
+using Tatook.Domain.Commands;
 using Tatook.Domain.Entities.Users;
+using Tatook.Shared.Commands;
+using Tatook.Shared.Handlers;
 
 namespace Tatook.API.Controllers.Users
 {
@@ -7,16 +11,16 @@ namespace Tatook.API.Controllers.Users
     [Route("v1/users")]
     public class UserController : ControllerBase
     {
-        private readonly IUserRepository _userRepository;
-        public UserController(IUserRepository userRepository)
+        private readonly IHandler<CreateUserCommand> _userHandler;
+        public UserController(IHandler<CreateUserCommand> userHandler)
         {
-            _userRepository = userRepository;
+            _userHandler = userHandler;
         }
 
-        [HttpGet]
-        public async Task<IActionResult> GetAll()
+        [HttpPost]
+        public async Task<IActionResult> Create(CreateUserCommand command)
         {
-            return Ok(await _userRepository.GetAllAsync());
+            return Ok(_userHandler.Handle(command));
         }
     }
 }

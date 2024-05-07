@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Tatook.Domain.Entities.Users;
+using Tatook.Domain.ValueObjects;
 using Tatook.Infrastructure.Data.Mapping;
 
 namespace Tatook.Infrastructure.Data.Context

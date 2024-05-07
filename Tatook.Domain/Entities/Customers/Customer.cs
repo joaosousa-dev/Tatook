@@ -11,6 +11,10 @@ namespace Tatook.Domain.Entities.Customers
 {
     public class Customer : BaseEntity
     {
+        protected Customer()
+        {
+            //EF CORE
+        }
         public Customer(Name name, Email email)
         {
             Name = name;
@@ -23,7 +27,7 @@ namespace Tatook.Domain.Entities.Customers
 
         private void Validate()
         {
-            AddNotifications(Name,Email);
+            AddNotifications(Name, Email);
         }
     }
 }

@@ -8,6 +8,7 @@ namespace Tatook.Domain.Entities.Quotes.Schedules
 {
     public class Schedule : BaseEntity
     {
+        protected Schedule() { }
         public Schedule(User tattoist, DateTime createDate, IList<Session> sessions, Customer customer, Quote quote, EScheduleStatus status)
         {
             Tattoist = tattoist;

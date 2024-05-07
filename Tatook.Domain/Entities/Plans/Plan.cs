@@ -4,6 +4,10 @@ namespace Tatook.Domain.Entities.Plans
 {
     public class Plan : BaseEntity
     {
+        protected Plan()
+        {
+            //EF CORE
+        }
         public Plan(string name, decimal price, int quantityEmployees)
         {
             Name = name;

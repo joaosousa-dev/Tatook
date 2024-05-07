@@ -18,6 +18,11 @@ namespace Tatook.Infrastructure.Repositories.Users
             throw new NotImplementedException();
         }
 
+        public bool EmailExists(string email)
+        {
+            return _context.Users.Any(x => x.Email.Address == email);
+        }
+
         public async Task<IList<User>> GetAllAsync()
         {
             return await _context.Users.ToListAsync();

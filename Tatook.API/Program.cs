@@ -1,8 +1,11 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Tatook.Domain.Commands;
 using Tatook.Domain.Entities.Users;
+using Tatook.Domain.Handlers;
 using Tatook.Infrastructure.Data.Context;
 using Tatook.Infrastructure.Repositories.Users;
+using Tatook.Shared.Handlers;
 
 namespace Tatook.API
 {
@@ -46,7 +49,8 @@ namespace Tatook.API
         static void ConfigureServices(WebApplicationBuilder builder)
         {
             builder.Services.AddControllers();
-            builder.Services.AddScoped<IUserRepository, UserRepository>();
+            builder.Services.AddScoped<IUserRepository,UserRepository>();
+            builder.Services.AddScoped<IHandler<CreateUserCommand>,UserHandler>();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
         }

@@ -8,12 +8,13 @@ namespace Tatook.Domain.Entities.Quotes
 {
     public class Quote : BaseEntity
     {
+        protected Quote() { }
         public Quote(User tattooist, Customer customer, string message, decimal width, decimal height, string color)
         {
             Price = 0;
             CreateDate = DateTime.UtcNow;
             ResponseDate = null;
-            Tattooist = tattooist;
+            User = tattooist;
             Customer = customer;
             Status = EQuotesStatus.OPENED;
             Message = message;
@@ -26,7 +27,7 @@ namespace Tatook.Domain.Entities.Quotes
         public decimal Price { get; private set; }
         public DateTime CreateDate { get; private set; }
         public DateTime? ResponseDate { get; private set; }
-        public User? Tattooist { get; private set; }
+        public User? User { get; private set; }
         public Customer Customer { get; private set; }
         public EQuotesStatus Status { get; private set; }
         public string? Message { get; private set; }
@@ -48,7 +49,7 @@ namespace Tatook.Domain.Entities.Quotes
         }
         public void UpdateTattooist(User tattooist)
         {
-            Tattooist = tattooist;
+            User = tattooist;
         }
         private void Validate()
         {
