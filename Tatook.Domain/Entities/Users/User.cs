@@ -13,7 +13,7 @@ namespace Tatook.Domain.Entities.Users
         protected User()
         {
         }
-        public User(Name name, Email email, Company? company, IList<Quote>? quotes = null, string? photoUrl = null, Subscription? subscription = null)
+        public User(Name name, Email email, Company? company = null, IList<Quote>? quotes = null, string? photoUrl = null, Subscription? subscription = null)
         {
             PasswordHash = PasswordHasher.Hash(PasswordGenerator.Generate(25));
             Name = name;
@@ -55,7 +55,7 @@ namespace Tatook.Domain.Entities.Users
         }
         public void Validate()
         {
-            AddNotifications(Name, Email, Company);
+            AddNotifications(Name, Email);
         }
 
 
