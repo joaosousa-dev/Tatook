@@ -13,9 +13,10 @@ namespace Tatook.Infrastructure.Repositories.Users
             _context = context;
         }
 
-        public Task Create(User entity)
+        public void Create(User entity)
         {
-            throw new NotImplementedException();
+            _context.Add(entity);
+            Save();
         }
 
         public bool EmailExists(string email)
@@ -33,12 +34,12 @@ namespace Tatook.Infrastructure.Repositories.Users
             throw new NotImplementedException();
         }
 
-        public Task Save(User entity)
+        public void Save()
         {
-            throw new NotImplementedException();
+            _context.SaveChanges();
         }
 
-        public Task Update(User entity)
+        public void Update(User entity)
         {
             throw new NotImplementedException();
         }

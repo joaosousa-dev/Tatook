@@ -4,8 +4,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
+using Tatook.Domain.Entities.Subscriptions;
 using Tatook.Domain.Entities.Users;
 using Tatook.Domain.ValueObjects;
 
@@ -18,10 +20,11 @@ namespace Tatook.Infrastructure.Data.Mapping
             builder.ToTable("User");
 
             builder.HasKey(x => x.Id);
-            
+
             builder.Property(x => x.PasswordHash)
                 .HasColumnName("PasswordHash")
-                .HasColumnType("NVARCHAR");
+                .HasColumnType("NVARCHAR")
+                .HasMaxLength(255);
 
             builder.Property(x => x.PhotoUrl)
                 .HasColumnName("PhotoUrl")
@@ -47,14 +50,12 @@ namespace Tatook.Infrastructure.Data.Mapping
                .HasConstraintName("FK_User_Company");
 
             builder.HasMany(x => x.Quotes)
-              .WithOne(x => x.User)
+              .WithOne(x => x.User) 
               .HasConstraintName("FK_User_Quotes");
 
             builder.HasOne(x => x.Subscription)
-             .WithOne()
-             .HasConstraintName("FK_User_Company");
-
-
+              .WithOne(x=> x.User)
+              .HasForeignKey<Subscription>("UserId");
         }
     }
 }
