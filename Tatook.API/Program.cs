@@ -50,7 +50,7 @@ namespace Tatook.API
         {
             builder.Services.AddControllers();
             builder.Services.AddScoped<IUserRepository,UserRepository>();
-            builder.Services.AddScoped<IHandler<CreateUserCommand>,UserHandler>();
+            builder.Services.AddScoped<IHandler<CreateUserCommand>,CreateUserHandler>();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
         }

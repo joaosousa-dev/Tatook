@@ -2,11 +2,13 @@
 
 namespace Tatook.API.Controllers
 {
+    [ApiController]
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        [HttpGet("Ping")]
+        public IActionResult HealthCheck()
         {
-            return View();
+            return Ok(new { Message = "Pong" });
         }
     }
 }

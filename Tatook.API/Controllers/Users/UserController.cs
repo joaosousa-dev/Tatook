@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Net;
 using System.Reflection.Metadata;
 using Tatook.Domain.Commands;
 using Tatook.Domain.Entities.Users;
@@ -20,7 +21,8 @@ namespace Tatook.API.Controllers.Users
         [HttpPost]
         public async Task<IActionResult> Create(CreateUserCommand command)
         {
-            return Ok(_userHandler.Handle(command));
+            var result = _userHandler.Handle(command);
+            return StatusCode((result.StatusCode),result);
         }
     }
 }
